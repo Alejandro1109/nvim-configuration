@@ -1,4 +1,7 @@
-vim.opt.guifont = { "Monocraft Nerd Font", "h12" }
+vim.opt.guifont = { "3270 NFM", ":h17" }
+
+
+
 
 return {
   -- Configure AstroNvim updates
@@ -20,7 +23,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin-frappe",
+  colorscheme = "everforest",
   options = {
     g = {catppuccin_flavour = "latte"}
     },
@@ -42,11 +45,18 @@ return {
         require("catppuccin").setup{}
       end,
     "nvim-treesitter/nvim-treesitter-context",
-    "luochen1990/rainbow"
-
-    }  
+    "luochen1990/rainbow",
+    "svermeulen/text-to-colorscheme",
+      config = function()
+        require('text-to-colorscheme').setup {
+          ai = {
+          openai_api_key = "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",
+          gpt_model = "gpt-3.5-turbo",
+        },
+      }
+      end,
   },
-
+},
 
   lsp = {
     -- customize lsp formatting options
